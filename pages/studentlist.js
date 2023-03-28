@@ -1,5 +1,5 @@
 import { Grid, Card, Text, Table } from "@nextui-org/react";
-import { createTheme, NextUIProvider } from "@nextui-org/react"
+import { createTheme, NextUIProvider } from "@nextui-org/react";
 import Link from 'next/link'
 
 
@@ -7,7 +7,7 @@ export default function StudentList({data}) {
 
     const MockItem = ({ text }) => {
         return (
-          <Card css={{ h: "$24", $$cardColor: '$colors$primary' }}>
+          <Card>
             <Card.Body>
               <Text h6 size={15} color="white" css={{ mt: 0 }}>
                 {text}
@@ -51,20 +51,36 @@ export default function StudentList({data}) {
 
     <NextUIProvider theme={theme}>
 
-    <image
-    width={320}
-    height={180}
-    scr="logo.png"
-    alt="Logo Image"
-    />
-
  
-    <Card css={{width: '100%', h: "$24", $$cardColor: '$colors$primary' }}>
+    <Card>
     <Card.Body>
-      <Text h6 size={15} color="white" css={{ my: 0}}>
-        Top
-      </Text>
-    </Card.Body>
+
+            <div class="backdrop"></div>
+<header class="main-header">
+    <nav class="main-header__nav">
+        <ul class="main-header__item-list">
+            <li class="main-header__item">
+                <a class="<%= path === '/' ? 'active' : '' %>" href="/">Login</a>
+            </li>
+            
+            <li class="main-header__item">
+                <a class="<%= path === '/registerstudent' ? 'active' : '' %>" href="/registerstudent">Register Student</a>
+            </li>
+
+            <li class="main-header__item">
+                <a class="<%= path === '/listAllCourses' ? 'active' : '' %>" href="/listAllCourses">Courses </a>
+            </li>
+
+            <li class="main-header__item">
+                <a class="<%= path === '/studentlist' ? 'active' : '' %>" href="/studentlist">Student List </a>
+            </li>
+
+            
+            </ul>
+
+    </nav>
+</header>
+            </Card.Body>
     </Card>
 
     
@@ -112,7 +128,7 @@ export default function StudentList({data}) {
                     <Table.Cell>{item.address}</Table.Cell>
                     <Table.Cell>{item.telephone}</Table.Cell>
                     <Table.Cell>{item.enrolledin}</Table.Cell>
-                    <Table.Cell><Link href={"viewAll?id=" +item.id}>View</Link></Table.Cell>
+                    <Table.Cell><Link href={"addCourse?id=" +item.id}>View</Link></Table.Cell>
                   </Table.Row>
                         ))
                       }

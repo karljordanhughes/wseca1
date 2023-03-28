@@ -6,6 +6,7 @@ import { Container, Card, Row, Text, Col, Spacer } from "@nextui-org/react";
 import { Input } from "@nextui-org/react";
 import { Button, Grid } from "@nextui-org/react";
 import { Image } from '@nextui-org/react';
+import { createTheme } from "@nextui-org/react"
 
 
 export default function Home({data}) {
@@ -91,16 +92,73 @@ export default function Home({data}) {
     
   }
 
+  const theme = createTheme({
+    type: "light", // it could be "light" or "dark"
+    theme: {
+      colors: {
+        // brand colors
+        primaryLight: '$green200',
+        primaryLightHover: '$green300',
+        primaryLightActive: '$green400',
+        primaryLightContrast: '$green600',
+        primary: '#4ADE7B',
+        primaryBorder: '$green500',
+        primaryBorderHover: '$green600',
+        primarySolidHover: '$green700',
+        primarySolidContrast: '$white',
+        primaryShadow: '$green500',
+  
+        gradient: 'linear-gradient(112deg, $blue100 -25%, $pink500 -10%, $purple500 80%)',
+        link: '#5E1DAD',
+  
+        // you can also create your own color
+        myColor: '#ff4ecd'
+  
+        // ...  more colors
+      },
+      space: {},
+      fonts: {}
+    }
+  })
+
+  
+
       return (
 
-<NextUIProvider>
+<NextUIProvider theme={theme}>
 <Container gap={0}>
   <Row gap={1}>
     <Col>
-      <Card css={{ $$cardColor: '$white' }}>
-        <Card.Body>
-        </Card.Body>
-      </Card>
+    <Card>
+    <Card.Body>
+
+            <div class="backdrop"></div>
+<header class="main-header">
+    <nav class="main-header__nav">
+        <ul class="main-header__item-list">
+            <li class="main-header__item">
+                <a class="<%= path === '/' ? 'active' : '' %>" href="/">Login</a>
+            </li>
+            
+            <li class="main-header__item">
+                <a class="<%= path === '/registerstudent' ? 'active' : '' %>" href="/registerstudent">Register Student</a>
+            </li>
+
+            <li class="main-header__item">
+                <a class="<%= path === '/listAllCourses' ? 'active' : '' %>" href="/listAllCourses">Courses </a>
+            </li>
+
+            <li class="main-header__item">
+                <a class="<%= path === '/studentlist' ? 'active' : '' %>" href="/studentlist">Student List </a>
+            </li>
+
+            
+            </ul>
+
+    </nav>
+</header>
+            </Card.Body>
+    </Card>
     </Col>
 
   </Row>

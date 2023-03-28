@@ -1,5 +1,7 @@
 import { Grid, Card, Text, Table } from "@nextui-org/react";
 import { createTheme, NextUIProvider } from "@nextui-org/react"
+import { Container, Row, Col, Spacer } from "@nextui-org/react";
+
 import Link from 'next/link'
 
 
@@ -50,22 +52,42 @@ export default function ListAllCourses({data}) {
   return (
 
     <NextUIProvider theme={theme}>
-
-    <image
-    width={320}
-    height={180}
-    scr="logo.png"
-    alt="Logo Image"
-    />
-
+    <Container gap={0}>
+      <Row gap={1}>
+        <Col>
  
-    <Card css={{width: '100%', h: "$24", $$cardColor: '$colors$primary' }}>
+    <Card>
     <Card.Body>
-      <Text h6 size={15} color="white" css={{ my: 0}}>
-        Top
-      </Text>
-    </Card.Body>
+
+            <div class="backdrop"></div>
+<header class="main-header">
+    <nav class="main-header__nav">
+        <ul class="main-header__item-list">
+            <li class="main-header__item">
+                <a class="<%= path === '/' ? 'active' : '' %>" href="/">Login</a>
+            </li>
+            
+            <li class="main-header__item">
+                <a class="<%= path === '/registerstudent' ? 'active' : '' %>" href="/registerstudent">Register Student</a>
+            </li>
+
+            <li class="main-header__item">
+                <a class="<%= path === '/listAllCourses' ? 'active' : '' %>" href="/listAllCourses">Courses </a>
+            </li>
+
+            <li class="main-header__item">
+                <a class="<%= path === '/studentlist' ? 'active' : '' %>" href="/studentlist">Student List </a>
+            </li>
+
+            
+            </ul>
+
+    </nav>
+</header>
+            </Card.Body>
     </Card>
+    </Col>
+    </Row>
 
     
     <Card css={{ h: "500px", $$cardColor: '#FFFFFF'}}>
@@ -115,7 +137,7 @@ export default function ListAllCourses({data}) {
         </Card.Body>
         </Card>
 
-
+    </Container>
     </NextUIProvider>
 
     )

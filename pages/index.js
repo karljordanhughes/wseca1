@@ -107,7 +107,31 @@ export default function Home({data}) {
         <Col>
           <Card>
             <Card.Body>
+            <div class="backdrop"></div>
+<header class="main-header">
+    <nav class="main-header__nav">
+        <ul class="main-header__item-list">
+            <li class="main-header__item">
+                <a class="<%= path === '/' ? 'active' : '' %>" href="/">Login</a>
+            </li>
             
+            <li class="main-header__item">
+                <a class="<%= path === '/registerstudent' ? 'active' : '' %>" href="/registerstudent">Register Student</a>
+            </li>
+
+            <li class="main-header__item">
+                <a class="<%= path === '/listAllCourses' ? 'active' : '' %>" href="/listAllCourses">Courses </a>
+            </li>
+
+            <li class="main-header__item">
+                <a class="<%= path === '/studentlist' ? 'active' : '' %>" href="/studentlist">Student List </a>
+            </li>
+
+            
+            </ul>
+
+    </nav>
+</header>
             </Card.Body>
           </Card>
         </Col>

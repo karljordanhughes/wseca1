@@ -20,7 +20,7 @@ export default function saveGrade(req, res) {
   
   // simple query
   connection.query(
-    "INSERT INTO wse.grades (sid, courseid, grade) VALUE ('"+sid+"', '"+cid+"', '"+grade+" ;",
+    "INSERT INTO wse.students (sid, courseid) VALUE ('"+sid+"', '"+cid+"' ;",
     function(err, results, fields) {
          
         //loop over records
